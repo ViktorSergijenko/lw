@@ -20,22 +20,22 @@ $large-desktop: 1440px;
 $ultra-large-desktop: 2560px;
 
 @mixin tablet {
-    @media (min-width: #{$tablet}) {
+    @media (max-width: #{$tablet}) {
         @content;
     }
 }
 @mixin mobile {
-    @media (min-width: #{$mobile}) {
+    @media (max-width: #{$mobile}) {
         @content;
     }
 }
 @mixin small-mobile {
-    @media (min-width: #{$small-mobile}) {
+    @media (max-width: #{$small-mobile}) {
         @content;
     }
 }
 @mixin small-desktop {
-    @media (min-width: #{$small-desktop}) {
+    @media only screen and (min-device-width: #{$tablet}) and (max-device-width: #{$small-desktop}){
         @content;
     }
 }
@@ -63,8 +63,6 @@ body, html {
     .first-block {
         background-image: url("../svg/mobile-first-block.svg") !important;
         padding-top: 15px !important;
-        background-size: 100% !important;
-        height: 70% !important;
         .first-block-container{
             max-width: 400px !important;
             .lunch-work-title {
@@ -357,8 +355,6 @@ body, html {
     .first-block {
         background-image: url("../svg/mobile-first-block.svg") !important;
         padding-top: 15px !important;
-        background-size: 100% !important;
-        height: 100% !important;
         .first-block-container{
             max-width: 400px !important;
             .lunch-work-title {
@@ -641,8 +637,6 @@ body, html {
     .first-block {
         background-image: url("../svg/mobile-first-block.svg") !important;
         padding-top: 90px !important;
-        background-size: 100% !important;
-        height: 1380px !important;
         .first-block-container{
             max-width: 680px !important;
             .lunch-work-title {
@@ -655,6 +649,7 @@ body, html {
                 }
                 .tablet-mobile-button{
                     justify-content: center !important;
+                    display: flex !important;
                     .button {
                         width: 270px !important;
                         height: 50px !important;
@@ -670,7 +665,6 @@ body, html {
                 .first-block-secondary-row-button {
                     padding-top: 600px !important;
                     display: flex !important;
-                    flex-basis: 100% !important;
                     justify-content: center;
                     .button {
                         width: 451px !important;
@@ -942,14 +936,10 @@ body, html {
     .first-block {
         padding-top: 10px !important;
         background-image: url("../svg/svg1.svg") !important;
-        background-size: 62% !important;
-        height: 480px !important;
+        // background-size: 62% !important;
         .first-block-container{
             max-width: 950px !important;
             .header-row {
-                .tablet-mobile-button{
-                    display: none !important;
-                }
                 .lunch-work-title {
                     flex-direction: row;
 
@@ -1238,7 +1228,6 @@ body, html {
     }
     .eigth-block {
         display: block !important;
-        height: 890px !important;
         background-position: center !important;
         background-repeat: no-repeat;
         .eigth-block-container {
@@ -1320,13 +1309,9 @@ body, html {
     .first-block {
         padding-top: 10px !important;
         background-image: url("../svg/svg1.svg") !important;
-        height: 700px !important;
         .first-block-container{
             max-width: 1200px !important;
             .header-row {
-                .tablet-mobile-button{
-                    display: none !important;
-                }
                 .lunch-work-title {
                     flex-basis: 5% !important;
                     flex-direction: row;
@@ -1589,7 +1574,6 @@ body, html {
     }
     .seventh-block {
         display: block !important;
-        height: 890px !important;
         .seventh-block-container {
             max-width: 1200px !important;
         }
@@ -1654,9 +1638,6 @@ body, html {
             .first-block-container{
             max-width: 2000px !important;
             .header-row {
-                .tablet-mobile-button{
-                    display: none !important;
-                }
                 .lunch-work-title {
 
                     line-height: 40px !important;
@@ -2060,7 +2041,7 @@ body, html {
     background-image: url("../svg/sixth-block-mobile-background.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 5018px;
+    display: none;
     .sixth-block-mobile-title {
         display: flex;
         flex-wrap: wrap;
@@ -2128,7 +2109,7 @@ body, html {
 }
 
 .seventh-block-mobile {
-    height: 3318px;
+    display: none;
     .seventh-block-mobile-title {
         display: flex;
         margin: 20px;
@@ -2196,8 +2177,8 @@ body, html {
     background-image: url("../svg/svg1.svg");
     background-repeat: no-repeat;
     background-position:  right top;
-    background-size: 56%;
-    height: 830px;
+    // background-size: 56%;
+    // height: 830px;
     padding-top: 24px;
     .first-block-container {
         width: 100%;
@@ -2243,7 +2224,7 @@ body, html {
             }
             .tablet-mobile-button {
                  // Flex settings
-                 display: flex;
+                 display: none;
                  flex-basis:50%;
                  justify-content: space-between;
                  // Button styles
@@ -2596,7 +2577,6 @@ body, html {
 .fourth-block {
     background-image: url("../svg/svg4.svg");
     background-repeat: no-repeat;
-    height: 110%;
     background-size: cover;
     .fourth-block-container {
         width: 100%;
@@ -2742,7 +2722,6 @@ body, html {
 .sixth-block {
     background-image: url("../svg/svg4.svg");
     background-repeat: no-repeat;
-    height: 105%;
     background-size: cover;
     .sixth-block-container {
         width: 100%;
@@ -2815,7 +2794,6 @@ body, html {
     }
 }
 .seventh-block {
-    height: 100%;
     .seventh-block-container {
         width: 100%;
         padding-right: 15px;
@@ -3048,7 +3026,6 @@ body, html {
         
     }
             .footer-block {
-                padding-top: 640px;
                 flex-basis: 100%;
                 display: flex;
                 flex-direction: row;
@@ -3115,7 +3092,7 @@ body, html {
     background-image: url("../svg/mobile-form-background.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 1500px;
+    display: none;
         .eigth-block-mobile-title {
         display: flex;
         justify-content: left;
@@ -3266,8 +3243,7 @@ body, html {
         line-height: 18px;
         /* identical to box height, or 120% */
         border: none;
-        text-align: center;
-                    
+        text-align: center;   
         color: #FFFFFF;
     }
 }
